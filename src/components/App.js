@@ -9,7 +9,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stateHasBeenUsed: false
+      winGame: null,
+      wrongGuesses: 11,
+      trackGuess: ['a', 'b', 'c'], 
+      currentWord: "string",
+      wordList: ["string", "string","string"]
     }
   }
 
