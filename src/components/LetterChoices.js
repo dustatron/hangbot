@@ -22,17 +22,29 @@ function LetterChoices(props) {
     padding: "5px",
     margin: "5px",
     fontSize: "30px",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    cursor: "pointer"
   };
   return (
     <div style={mainBox}>
       {letters.split("").map((letter) => {
-        return <div style={letterBox}>{letter}</div>;
+        return (
+          <div
+            onClick={() => {
+              props.onLetterClick(letter);
+            }}
+            style={letterBox}
+          >
+            {letter}
+          </div>
+        );
       })}
     </div>
   );
 }
 
-LetterChoices.propTypes = {};
+LetterChoices.propTypes = {
+  onLetterClick: PropTypes.func
+};
 
 export default LetterChoices;

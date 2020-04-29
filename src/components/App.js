@@ -5,23 +5,22 @@ import LetterBlanks from "./LetterBlanks";
 import TurnCount from "./TurnCount";
 import ResetButton from "./ResetButton";
 import "../App.css";
-
+import { connect } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row } from "react-bootstrap";
+import * as a from "../actions/ActionTypes";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      winGame: null,
-      wrongGuesses: 11,
-      trackGuess: [ "a", "b", "c" ],
-      currentWord: "string",
-      wordList: [ "string", "string", "string" ]
-    };
   }
 
   render() {
+    const handleLetterClick = (letter) => {
+      const { dispatch } = this.props;
+      const action = { type: a.ADD_LETTER, letter: letter };
+      dispatch(action);
+    };
     return (
       <React.Fragment>
         <Container>
@@ -49,7 +48,7 @@ class App extends React.Component {
 
           <Row>
             <Col>
-              <LetterChoices />
+              <LetterChoices onLetterClick={handleLetterClick} />
             </Col>
           </Row>
           <Row>
@@ -62,5 +61,16 @@ class App extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    winGame: state.winGame,
+    wrongGuesses: state.wrongGuesses,
+    trackGuess: state.trackGuess,
+    currentWord: state.currentWord
+  };
+};
+
+App = connect(mapStateToProps)(App);
 
 export default App;
