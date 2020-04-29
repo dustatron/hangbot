@@ -1,14 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
-const ResetButton = props => {
+const ResetButton = (props) => {
+  const mainBox = {
+    margin: "3rem",
+    textAlign: "center"
+  };
   return (
-    <h1>ResetButton</h1>
-  )
-}
+    <div style={mainBox}>
+      <Button variant="dark" size="lg">
+        ResetButton
+      </Button>
+    </div>
+  );
+};
 
-ResetButton.propTypes = {
-
-}
+ResetButton.propTypes = {};
 
 export default ResetButton;
