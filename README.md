@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# _HangBot_
 
-## Available Scripts
+#### _29 April 2020 | Jamison Cozart, Dusty McCord, Brandan Sayarath_
 
-In the project directory, you can run:
+## Description
 
-### `yarn start`
+_React + Redux hangman application for users to play hangman without killing the robot._
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_View the live site at:_ https://dustatron.github.io/hangbot/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![UI Design](https://i.imgur.com/Vpa0Rve.png)
 
-### `yarn test`
+## Setup/Installation Requirements
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Node install
 
-### `yarn build`
+###### For macOS:
+_If Homebrew is not installed on your computer already, then install Homebrew by entering the following two commands in Terminal:_
+* $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+* $ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_Install Git with the following command:_
+* $ brew install git
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+_Next, install Node.js by entering the following command in Terminal:_
+* $ brew install node
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###### For Windows:
+_Please visit the [Node.js website](https://nodejs.org/en/download/) for installation instructions._
 
-### `yarn eject`
+#### Install this application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+_Clone this repository via Terminal using the following commands:_
+```
+cd desktop
+git clone https://github.com/dustatron/HangBot-react
+cd HangBot-react
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_Next, install npm at the project's root directory, and start the server:_
+```
+npm install
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+_If everything is correct, the localhost site should open automatically_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+_View the contents of this project by opening in VSCode:_
+```
+code .
+```
 
-## Learn More
+## Development Process
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Application UI Design](https://i.imgur.com/Vpa0Rve.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Application features 1 view with 5 components. All state is managed by Redux which is subscribed to by App.js_
 
-### Code Splitting
+![Application Component Tree](https://i.imgur.com/yNQP8ra.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+_Application Component tree depicting the Component heirarchy for state management and planning._
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* _React_
+* _Redux_
+* _WebPack_
+* _Git_
+* _CSS_
 
-### Making a Progressive Web App
+### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+*This webpage is licensed under the MIT license.*
 
-### Advanced Configuration
+&copy; 2020 **_Jamison Cozart, Dusty McCord, Brandan Sayarath_**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
