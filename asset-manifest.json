@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hangbot/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/hangbot/static/js/main.0744b4a2.chunk.js",
+    "main.js.map": "/hangbot/static/js/main.0744b4a2.chunk.js.map",
+    "runtime-main.js": "/hangbot/static/js/runtime-main.7bbe71d8.js",
+    "runtime-main.js.map": "/hangbot/static/js/runtime-main.7bbe71d8.js.map",
+    "static/js/2.975f2f1b.chunk.js": "/hangbot/static/js/2.975f2f1b.chunk.js",
+    "static/js/2.975f2f1b.chunk.js.map": "/hangbot/static/js/2.975f2f1b.chunk.js.map",
+    "index.html": "/hangbot/index.html",
+    "precache-manifest.6c8961a4136b2f9fc31c74ce412a8b03.js": "/hangbot/precache-manifest.6c8961a4136b2f9fc31c74ce412a8b03.js",
+    "service-worker.js": "/hangbot/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/hangbot/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.975f2f1b.chunk.js.LICENSE.txt": "/hangbot/static/js/2.975f2f1b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7bbe71d8.js",
+    "static/js/2.975f2f1b.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.0744b4a2.chunk.js"
+  ]
+}
