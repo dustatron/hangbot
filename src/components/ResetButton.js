@@ -9,13 +9,7 @@ const ResetButton = (props) => {
   };
   return (
     <div style={mainBox}>
-      <Button
-        onClick={() => {
-          props.onResetClick();
-        }}
-        variant="dark"
-        size="lg"
-      >
+      <Button onClick={() => props.whereResetClicked()} variant="dark" size="lg">
         Reset
       </Button>
     </div>
@@ -23,7 +17,7 @@ const ResetButton = (props) => {
 };
 
 ResetButton.propTypes = {
-  onResetClick: PropTypes.func
+  whereResetClicked: PropTypes.func
 };
 
 export default ResetButton;

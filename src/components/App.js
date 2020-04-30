@@ -25,15 +25,11 @@ class App extends React.Component {
   };
 
   checkForWin = () => {
-    const thisWord = this.props.currentWord.toUpperCase().split('');
-    let counter = 0;
-    for (let i = 0; i < this.props.trackGuess.length; i++) {
-      if (thisWord.includes(this.props.trackGuess[i].toUpperCase())) {
-        console.log('true', this.props.trackGuess[i]);
-        counter++;
-      }
-    }
-    if (counter === thisWord.length) {
+    const mainLetters = this.props.currentWord.toUpperCase().split('');
+    const guessLetters = this.props.trackGuess;
+    const tempArr = mainLetters.filter((letter) => this.props.trackGuess.includes(letter.toUpperCase()));
+
+    if (tempArr.sort().join('') === mainLetters.sort().join('')) {
       return true;
     } else {
       return false;
@@ -63,7 +59,7 @@ class App extends React.Component {
     if (isWin) {
       //user wins game
       this.handleWinGame();
-    } else if (this.props.wrongGuesses <= 1 && !isWin) {
+    } else if (this.props.wrongGuesses <= 0 && !isWin) {
       //user loses game
       dispatch({ type: a.LOSE_GAME });
     }
@@ -126,8 +122,11 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col>
-              <EndGameModal showModal={this.shouldShowModal()} endState={this.props.winGame} />
-              <ResetButton onResetClick={this.handleResettingGame} />
+              <EndGameModal
+                onResetClick={this.handleResettingGame}
+                showModal={this.shouldShowModal()}
+                endState={this.props.winGame}
+              />
             </Col>
           </Row>
         </Container>
