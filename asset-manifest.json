@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hangbot/static/css/main.5b8fa270.chunk.css",
-    "main.js": "/hangbot/static/js/main.e05bd14c.chunk.js",
-    "main.js.map": "/hangbot/static/js/main.e05bd14c.chunk.js.map",
+    "main.js": "/hangbot/static/js/main.7c1b6813.chunk.js",
+    "main.js.map": "/hangbot/static/js/main.7c1b6813.chunk.js.map",
     "runtime-main.js": "/hangbot/static/js/runtime-main.7bbe71d8.js",
     "runtime-main.js.map": "/hangbot/static/js/runtime-main.7bbe71d8.js.map",
     "static/css/2.69121389.chunk.css": "/hangbot/static/css/2.69121389.chunk.css",
     "static/js/2.60079236.chunk.js": "/hangbot/static/js/2.60079236.chunk.js",
     "static/js/2.60079236.chunk.js.map": "/hangbot/static/js/2.60079236.chunk.js.map",
     "index.html": "/hangbot/index.html",
-    "precache-manifest.9a88f646aa9fa02f7361eb52ae396884.js": "/hangbot/precache-manifest.9a88f646aa9fa02f7361eb52ae396884.js",
+    "precache-manifest.77112f595ad215275c30c444c828755c.js": "/hangbot/precache-manifest.77112f595ad215275c30c444c828755c.js",
     "service-worker.js": "/hangbot/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/hangbot/static/css/2.69121389.chunk.css.map",
     "static/css/main.5b8fa270.chunk.css.map": "/hangbot/static/css/main.5b8fa270.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.69121389.chunk.css",
     "static/js/2.60079236.chunk.js",
     "static/css/main.5b8fa270.chunk.css",
-    "static/js/main.e05bd14c.chunk.js"
+    "static/js/main.7c1b6813.chunk.js"
   ]
 }
