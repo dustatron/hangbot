@@ -51,7 +51,8 @@ function LetterBlanks(props) {
 }
 
 LetterBlanks.propTypes = {
-  letter: PropTypes.string
+  letter: PropTypes.string,
+  guessedLetters: PropTypes.array
 };
 
 export default LetterBlanks;

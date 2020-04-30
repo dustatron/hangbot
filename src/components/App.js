@@ -27,6 +27,14 @@ class App extends React.Component {
     dispatch(action);
   };
 
+  handleDecrementingTurn = (letter) => {
+    const { dispatch } = this.props;
+    if (!this.props.currentWord.toUpperCase().split('').includes(letter)) {
+      const action = { type: a.WRONG_GUESS };
+      dispatch(action);
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -38,7 +46,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Robot />
+              <Robot currentTurnCount={this.props.wrongGuesses} />
             </Col>
           </Row>
           <Row>
@@ -49,13 +57,17 @@ class App extends React.Component {
 
           <Row>
             <Col xs="12">
-              <TurnCount />
+              <TurnCount currentTurnCount={this.props.wrongGuesses} />
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <LetterChoices onLetterClick={this.handleLetterClick} />
+              <LetterChoices
+                updateGuessCounter={this.handleDecrementingTurn}
+                onLetterClick={this.handleLetterClick}
+                guessedLetters={this.props.trackGuess}
+              />
             </Col>
           </Row>
           <Row>
