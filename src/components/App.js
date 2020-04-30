@@ -125,6 +125,7 @@ class App extends React.Component {
                 onResetClick={this.handleResettingGame}
                 showModal={this.shouldShowModal()}
                 endState={this.props.winGame}
+                mainWord={this.props.currentWord}
               />
             </Col>
           </Row>

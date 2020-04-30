@@ -11,6 +11,7 @@ function EndGameModal(props) {
           <Modal.Title>{props.endState ? 'You Win!' : 'You Lose'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <h4> {props.endState ? `You correctly guessed "${props.mainWord}"` : `The word was "${props.mainWord}"`} </h4>
           {props.endState ? 'I am so proud of you. My human friend!' : "It' okay to not be perfect like a robot."}
           <br />
           Care to try again?
@@ -26,7 +27,8 @@ function EndGameModal(props) {
 EndGameModal.propTypes = {
   showModal: PropTypes.bool,
   endState: PropTypes.bool,
-  onResetClick: PropTypes.func
+  onResetClick: PropTypes.func,
+  mainWord: PropTypes.string
 };
 
 export default EndGameModal;
