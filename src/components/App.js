@@ -35,6 +35,18 @@ class App extends React.Component {
     }
   };
 
+  handleResettingGame = () => {
+    const { dispatch } = this.props;
+    const action1 = { type: a.RESET_GAME };
+    const action2 = { type: a.RESET_GUESS };
+    const action3 = { type: a.RESET_LETTERS };
+    const action4 = { type: a.SET_WORD };
+    dispatch(action1);
+    dispatch(action2);
+    dispatch(action3);
+    dispatch(action4);
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -72,7 +84,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col>
-              <ResetButton />
+              <ResetButton onResetClick={this.handleResettingGame} />
             </Col>
           </Row>
         </Container>
