@@ -16,7 +16,7 @@ const ResetButton = (props) => {
         variant="dark"
         size="lg"
       >
-        ResetButton
+        Reset
       </Button>
     </div>
   );

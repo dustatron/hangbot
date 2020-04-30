@@ -41,6 +41,8 @@ function LetterBlanks(props) {
         {props.letters.toUpperCase().split('').map((letter) => {
           if (props.guessedLetters.includes(letter)) {
             return <div style={showBox}>{letter}</div>;
+          } else if (letter === ' ') {
+            return <div style={showBox}>{letter}</div>;
           } else {
             return <div style={greyBox} />;
           }
