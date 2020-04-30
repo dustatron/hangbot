@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f63fdb0c95d9d90fb87c4d8c9663cf2c",
+    "revision": "305901fed0789c088ecdeaf2ad5311ae",
     "url": "/hangbot/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hangbot/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "57b2520a8c2acdaca314",
+    "revision": "6a49768698fab8b91c1c",
     "url": "/hangbot/static/css/main.5b8fa270.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hangbot/static/js/2.0ca6bf51.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "57b2520a8c2acdaca314",
-    "url": "/hangbot/static/js/main.b15d4fdd.chunk.js"
+    "revision": "6a49768698fab8b91c1c",
+    "url": "/hangbot/static/js/main.ad33810e.chunk.js"
   },
   {
     "revision": "65a8ab3db72305d02ed3",
