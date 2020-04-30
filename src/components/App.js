@@ -15,12 +15,13 @@ class App extends React.Component {
     super(props);
   }
 
+  handleLetterClick = (letter) => {
+    const { dispatch } = this.props;
+    const action = { type: a.ADD_LETTER, letter: letter };
+    dispatch(action);
+  };
+
   render() {
-    const handleLetterClick = (letter) => {
-      const { dispatch } = this.props;
-      const action = { type: a.ADD_LETTER, letter: letter };
-      dispatch(action);
-    };
     return (
       <React.Fragment>
         <Container>
@@ -48,7 +49,7 @@ class App extends React.Component {
 
           <Row>
             <Col>
-              <LetterChoices onLetterClick={handleLetterClick} />
+              <LetterChoices onLetterClick={this.handleLetterClick} />
             </Col>
           </Row>
           <Row>
