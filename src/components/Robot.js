@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSpring, animated } from 'react-spring';
+import { Transition } from 'react-spring/renderprops';
 
 const Robot = (props) => {
-  const botStyle = {
+  const botStyle = useSpring({
     position: 'relative',
     margin: 'auto',
     width: '326px',
     height: '363px',
     background: '#000000',
     boxShadow: '0px 0px 30px rgba(121, 120, 120, 0.15)',
-    borderRadius: '6px'
-  };
+    borderRadius: '6px',
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 2500 }
+  });
 
   const body = {
     position: 'absolute',
@@ -114,8 +119,22 @@ const Robot = (props) => {
 
   const partArr = [ head, rightEye, leftEye, mouth, body, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot ];
 
-  return <div style={botStyle}>{partArr.splice(0, props.currentTurnCount).map((part) => <div style={part} />)}</div>;
+  return (
+    <animated.div style={botStyle}>
+      {partArr.splice(0, props.currentTurnCount).map((part) => <div style={part} />)}
+    </animated.div>
+  );
 };
+
+{
+  /* <Transition
+  items={items} keys={item => item.key}
+  from={{ transform: 'translate3d(0,-40px,0)' }}
+  enter={{ transform: 'translate3d(0,0px,0)' }}
+  leave={{ transform: 'translate3d(0,-40px,0)' }}>
+  {item => props => <div style={props}>{item.text}</div>}
+</Transition> */
+}
 
 Robot.propTypes = {
   currentTurnCount: PropTypes.number

@@ -26,7 +26,6 @@ class App extends React.Component {
 
   checkForWin = () => {
     const mainLetters = this.props.currentWord.toUpperCase().split('');
-    const guessLetters = this.props.trackGuess;
     const tempArr = mainLetters.filter((letter) => this.props.trackGuess.includes(letter.toUpperCase()));
 
     if (tempArr.sort().join('') === mainLetters.sort().join('')) {
