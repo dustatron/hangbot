@@ -9,11 +9,44 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Row } from 'react-bootstrap';
 import * as a from '../actions/ActionTypes';
+import EndGameModal from './EndGameModal';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  shouldShowModal = () => {
+    if (this.props.winGame !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  checkForWin = () => {
+    const thisWord = this.props.currentWord.toUpperCase().split('');
+    let counter = 0;
+    for (let i = 0; i < this.props.trackGuess.length; i++) {
+      if (thisWord.includes(this.props.trackGuess[i].toUpperCase())) {
+        console.log('true', this.props.trackGuess[i]);
+        counter++;
+      }
+    }
+    if (counter === thisWord.length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  handleWinGame = () => {
+    if (this.checkForWin()) {
+      const { dispatch } = this.props;
+      const action = { type: a.WIN_GAME };
+      dispatch(action);
+    }
+  };
 
   componentDidMount() {
     const { dispatch } = this.props;
@@ -21,10 +54,19 @@ class App extends React.Component {
     dispatch(action);
   }
 
-  handleLetterClick = (letter) => {
+  handleLetterClick = async (letter) => {
     const { dispatch } = this.props;
     const action = { type: a.ADD_LETTER, letter: letter };
-    dispatch(action);
+    await dispatch(action);
+
+    const isWin = this.checkForWin();
+    if (isWin) {
+      //user wins game
+      this.handleWinGame();
+    } else if (this.props.wrongGuesses <= 1 && !isWin) {
+      //user loses game
+      dispatch({ type: a.LOSE_GAME });
+    }
   };
 
   handleDecrementingTurn = (letter) => {
@@ -84,6 +126,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col>
+              <EndGameModal showModal={this.shouldShowModal()} endState={this.props.winGame} />
               <ResetButton onResetClick={this.handleResettingGame} />
             </Col>
           </Row>
