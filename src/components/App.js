@@ -1,18 +1,24 @@
-import React from "react";
-import Robot from "./Robot";
-import LetterChoices from "./LetterChoices";
-import LetterBlanks from "./LetterBlanks";
-import TurnCount from "./TurnCount";
-import ResetButton from "./ResetButton";
-import "../App.css";
-import { connect } from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Col, Row } from "react-bootstrap";
-import * as a from "../actions/ActionTypes";
+import React from 'react';
+import Robot from './Robot';
+import LetterChoices from './LetterChoices';
+import LetterBlanks from './LetterBlanks';
+import TurnCount from './TurnCount';
+import ResetButton from './ResetButton';
+import '../App.css';
+import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Col, Row } from 'react-bootstrap';
+import * as a from '../actions/ActionTypes';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    const action = { type: a.SET_WORD };
+    dispatch(action);
   }
 
   handleLetterClick = (letter) => {
@@ -37,7 +43,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col xs="12">
-              <LetterBlanks />
+              <LetterBlanks letters={this.props.currentWord} guessedLetters={this.props.trackGuess} />
             </Col>
           </Row>
 
